@@ -1,0 +1,9 @@
+- when we see the express-one folder it pritty strate forward and we know how the basic express is working but the problam with express-one is that our express setup, thirdparty packages intigrations, middleweres, routes, route handlerrs everything is in one file cald app.js and in real world creating app like this will be the worst thing you can do.
+
+- so we need some kind of basic sepration over hear so we can manage the setup, thirdparty packages intigrations, middleweres, routes, route handlerrs in diffrent files or good to say js modules. so our app can be scalable and also redable.
+
+- so for that we will separte some of the things from app.js to othere modules and we will create a basic structure for node app which we can follow for better sapration of concern. 
+
+- but this stracture is just to get idea how we can seprate the things in diffrent places for better app structure but this structure can be vary depands on your needs and diffrents senarios in diffrent projects.
+
+- as we will move forward in course we will going to update and change this structure base on the current understanding of node and requarments.

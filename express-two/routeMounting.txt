@@ -1,0 +1,13 @@
+1) the first problem in the app is that our routes are defined in app.js it should we in seprate place like routes folder 
+
+2) also we can create seprate entites like tours, users and we can create seprate routes for them in diffrent files and then register those to main express apps.
+
+3) this process is cald route mounting in this we seprate our routes base on entites in our project and then we create seprate file for them where they inishilze with router object and then we use them in our app.
+
+4) the main idea is to create seprate router instance for each entites in project so they work kind of seprate mini app and then we register them to our main app
+
+5) for that we have Router() function (middlewere) in express object which is notthig but just one kind of middlewere we can store it to any variable and then that variable will become a instance of router and we can use this for all route related things which we do in express
+
+6) after thate becayse this router instance is just a middlewere we can register it with app.use where we can provide main route path as first argument and then router instance middlewere as seccond argument to use in app 
+
+7) lets see it in practic

@@ -1,0 +1,13 @@
+- a express is minimal node.js framework 
+
+- express in a web framework built on top of the node so we can use node for web development very easily and simply.
+
+- express allow for rapid web development without re inventing weel because express has many things which we want to use for a tipical web app.
+
+- express follows MVC stracture which we will understand in future
+
+- but keep in mind that express is minimal web framework that mins it is not packed with lots and lots of all wanted and unwanted thing just like we have in laravel but insted of that express comes with all basic feactures which each and every web app will need and if we want any specific feacture which is not in express we have lots and lots of third party librarys in js world to use with and without express.
+
+- so inshort express provides things which we need in every apps and other thing can we added as we need them insted of giving all things wanted and unwantwed and use only small parts of that from framework.
+
+- because of this learning curve of node and express is less then laravel and other backend frameworks because we are learning only things which are needed and slowly learning and adding things when we need in future insted of learning all things and using some part of that.

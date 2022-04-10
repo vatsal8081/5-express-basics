@@ -1,0 +1,76 @@
+1) the main problem comes when we create the node js backend is node don't have a way to support the es5 module system directly so we have to use the commonjs modules only 
+
+2) but there are many ways to use the es6 modules in node backends and some of the well known are 
+
+- using type: module in package json or .mjs file but in this we will not able to  use the require syntex and we will not have access to __dirname __filename etc global variables 
+
+- use babel for transpiling the es6 code into es5 so we can use es6 modules and babel will convert it to require hear we will able to use any of js code regardless of it's version so we will able to use old and new all syntex and we will have __dirname __filename as well so it is good option but one thing to keep in mind is that node don't understand the es6 modules and some new js syntex so we have to transpile it and create build which we can run in production otherwise direst code will not run there.
+
+- the best option is use webpack and babel to gather for backend app which will give bellow plus points
+
+    1) we can minified our code in one single js file with webpack and can also bundel other files as well
+    
+    2) we can transpile the code in to es5 so we can use new feactures which are not yet avalable in node like es6 modules sperad rest etc in development ann they weill converted to es5 in build.
+
+    3) many times minified and transpiled code works more fast then simple one 
+
+    4) we can define and use absulute imports insted of relative one in project with webpack
+
+    5) if we will going to use any of templating, html or css or scss in backend for server side templating we and also bundel them with webpack.  
+
+
+- and there are many more advantages of this 
+
+
+- but to use webpack and babel and configure it with our project we need to learn little bit about webpack and babel because in frontend it's done by cli but hear we will do it by our own and also every setup may have little diffrence then other for webpack and babel configuration. 
+
+- so when we will learn a good amount of node then we will going to explore this not now. right now our main focus is to just use es6 module system in our node project in development we will take care or bundeling various filetypes and transpiling latter when we will learn webpack and babel
+
+- the course will continue to use the commonjs modules but we will use this simple setup for using es6 modules for now and then in future we will learn webpack and babel and also check the cognishine implimantation of node, some company projects implimantation and then we will deside how to use node with webpack and babel to work in dev and prod both enverment efficently
+
+- this are some of the resources which i found and it will going to help in future 
+
+    1) https://www.udemy.com/course/webpack-from-beginner-to-advanced/
+
+    2) https://medium.com/code-oil/webpack-javascript-bundling-for-both-front-end-and-back-end-b95f1b429810
+    
+    3) https://www.youtube.com/watch?v=7vGk8vFDGfA&t=12s 
+
+    4) https://www.youtube.com/watch?v=k_dlWj-PScg
+
+    5) https://www.youtube.com/watch?v=orp2Fnvzrgw
+
+
+- from now we wll use this simple implimantation for using the es6 modules and absulute imports for all practice until we don't learn and change the node setup in future lets go through this implimantation
+
+    1) install @babel/cli, @babel/core, @babel/node, @babel/preset-env, babel-plugin-module-resolver as dev dependencies
+
+    2) create .babelrc file to store babel configurations in it it will contain 
+
+    {
+        "presets": ["@babel/preset-env"],
+        "plugins": [
+            [
+                "module-resolver",
+                {
+                    "root": ["./src"]
+                }
+            ]
+        ]
+    }
+
+
+    3) in package json create 3 scripts 
+
+    "dev": "nodemon --exec babel-node src/server.js",
+    "build": "babel src -d build",
+    "start": "node build/server.js"
+
+    - hear the dev one is for development where we will use nodemon and execute src/server.js with babel-node to transpile for dev perpous.
+
+    - build will transpile the code into build folder but it will not minified it so there will be same structure in dist as project and it will not contain any other file then js so thats why we need webpack as well with babel
+
+    - start is command which we will run in prod enverment using node because that thime we will not have any dev dependencies like babel and nodemon and it not recomended to use nodemon in prod any way.
+
+
+- so this it the basic setup for now just keep in mind we will need some dependencies of babel and .babelrc and need to define scripts for package.josn which will work for dev only now and all project code will be in src folder.

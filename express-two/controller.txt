@@ -1,0 +1,5 @@
+1) now after we sepate our router it's time to seprate the route handlerers function to other file of so cald js modules so that we can make our structure mode better and also redable and we can also resue those route handlerers to other plases as well.
+
+2) for that we careate controller folder and we will create seprate controller files for the diffrent entites and we will define all route handlerers related to those entites there and then export them and inport and use it to route definations
+
+3) check the tourController.js for more info

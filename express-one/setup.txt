@@ -1,0 +1,17 @@
+- every time when you want to create new project we have a cli in other backends but hear in node to install the express the tipical way is to create it by your self.
+
+- there can be other clis which can do it for us but we will create in by our own in hear.
+
+- first step is to create a folder and create a .prettierrc, .eslintrc.json (we will configur not now in future), initlize git repo (not now in future) 
+
+- then we can initlize the folder as node package by doing npm init or yarn init you can use any of them according to your prefrence
+
+- the entry point should be app.js when inishlizing the node package
+
+- now we have to install express in the repo (current lattest bita version of express is 5 but we will use node 4 for now to not intruduce any breaking changes and work same as course)
+
+- we also have to install the nodemon and setup it in package.json for use.
+
+- we will also have to use prettire extenssion and postman for now other things will be added afterwords for better devlopment.
+
+- now it's convension when you use express the entry point should be app.js so create the file and then look into it for more details

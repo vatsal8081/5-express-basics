@@ -1,0 +1,52 @@
+- lets understand what is rest in the api
+
+- a rest is stands for represintasnal state tranpher protocol whic is a arcticture whic we follow to build an apis.
+
+- to follow the restfull arcticture we have to just follow this 5 rules as mutch as possible
+
+1) seprate API into logical resorces
+ - we have to seprate apis in resorces and create endpoint in a way that we can seprate a apis in diffrent resorces where each endpoint can pufform crud on some perticular resorce ex: we can create crud apis by deviding apis in to resorce as users, tours, reviews etc for an tour and trabvel site.
+
+2) expose structure base url
+    - we have to create diiifren endpoints for pufforming crud and other stuff on any resorce like we can make apis for get, add, update, delete the tours resorce
+
+3) use http methods
+    - it's important in REST what we use the http method to identify what the api endpoint will do to a perticular resorce insted of writing it on endpoint path as mutch as possible.
+
+    BAD EXAMPLE
+    - add-new-tour
+    - get-tour
+    - update-tour
+    - delete-tour
+    - get-tour-of-user
+    - delete-tour-of-user
+
+    - all this are bad ways to create api endpoints in REST because as the rule only http method can use to identify what happen to resourse so we should use the diffrent http methods and resourse names in combination for doing various oprations.
+    - and trust me this way we will be able to manage urls more easily and cleane way. so we should use this way. and other thing is all resourse should be in pural names always in all oprations. 
+
+    GOOD WAY
+    GET : /tours (all tours from db)
+    GET : /tours/{id} (specific tour from db)
+    POST : /tours (create tour)
+    PUT : /tours/{id} (update any tour)
+    PATCH : /tours/{id} (update any tour)
+    DELETE: /tpurs/{id} (delete any tour)
+
+    GET : /users/{id}/tours (get all tours of user of id)
+    DELETE : /users/{id}/tours/{id} {delete specific tour of user of specific id}
+
+    - just like this a possiblites are endless so we can use this in any combination but key thing is by method and url we should get idea of what this endpoint will do insted of writhing it as endpoint
+
+    - but we can ignore this and write other way as well for any specific situations as well just we should use this way as mutch as possible.
+
+4) send data in json 
+    - mostly we use json data format usualy to send and recive data.
+    - and we also do some response formatting before sending data the idea is to wrap all response into one fix format for any case and pass some extra data with every response so that the all response can be same in format and client can handle any of case easily because in every situation wather success fail or any other the data fromat will be the same. 
+    - this way of wrapping the respnse is cald enveloping the response 
+    - there are many well know enveloping formats avalable in node and most basic one is jSend we alos have some other like JSOPN:API, OData json protocol
+
+5) be stateless
+    - all backend apis should be stateless that mins we don't store any client related data in backend all client related data will store in client side only in most of the senario 
+    - and client always send those data with api call to backend so backend can use it and react base on that
+    - ex 1) we always send token with request so backend can identify the user insted of creating session in backend
+    2) we send page number and serch etc things in pagination so backend can use of then insted of backend store current page number in pagination.

@@ -1,0 +1,15 @@
+1) the essence of express development is to just understand the request and response cycle and the develop
+
+2) when someone hits the server the express will create the req and res objects which will be use to send the meaningfull response at the end 
+
+3) after creating the req and response objects the express go through the middleweres and the middlewere is nussting but just a function which will be executed in between the request and response cycle. there can be any number of middlewere in between the request and response cycle and they are just a function which we can execute and we can do anything in it. 
+
+4) in node everything is just middlewere that mins any code which execute in request and response cycle is executed in middlewere even the route handler which we define for routes are also kind of middleweres which will only execute for specific routes.
+
+5) every middlewere will get req, res and next objects whic we can use and the next is just use to forwered the request to other middlewere and at the route handler middlewere we don't want to forwered it so we just rend response from there.
+
+6) we already use middlewere before the express().josn() to get access to request body it's a middlewere because it execute in between the request and response cycle and this  middlewere is cald body parser middlewere
+
+7) there can be more then one middlewere in between request and response cycle of any perticular route and all this middlewere togather is cald middlewere stack and very important thing hear is that all those middlewere will execute in sequese they are define in code so the middlewere which are first in code will execute first and then other stap by stap. so the order in which we write the middleweres are important in express.
+
+8) you can think the middlewere stack as pipe line where our request and response will go through and it get process and then at the end we get response.
