@@ -74,3 +74,5 @@
 
 
 - so this it the basic setup for now just keep in mind we will need some dependencies of babel and .babelrc and need to define scripts for package.josn which will work for dev only now and all project code will be in src folder.
+
+- thats it and now you can use the es6 modules in project insted of commonjs just look the miplimantation of project and check imports and exports there only those are diffrent other then that the project is same as express-two
