@@ -30,7 +30,7 @@
     POST : /tours (create tour)
     PUT : /tours/{id} (update any tour)
     PATCH : /tours/{id} (update any tour)
-    DELETE: /tpurs/{id} (delete any tour)
+    DELETE: /tours/{id} (delete any tour)
 
     GET : /users/{id}/tours (get all tours of user of id)
     DELETE : /users/{id}/tours/{id} {delete specific tour of user of specific id}

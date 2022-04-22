@@ -3,9 +3,9 @@ const express = require('express');
 // first compleare 1,2 etc route thing thene read this controller realted thing
 // we will import all this controllers like this and assign it to our endpoints.
 const {
-  getaAllTours,
+  getAllTours,
   createTour,
-  getSingelTour,
+  getSingleTour,
   updateTourByPut,
   updateTourByPatch,
   deleteTour,
@@ -21,11 +21,11 @@ const router = express.Router();
 // so when we will register the route instance we will specify our commen endpoint there so this route instance middlewere can run only to the tours related routes and hear we just specify extra path
 // ex we will register this tour route middlewere for path /api/v1/tours so in this endpoints we just specify / for notthing /:id for /api/v1/tours/:id like that
 
-router.get('/', getaAllTours);
+router.get('/', getAllTours);
 
 router.post('/', createTour);
 
-router.get('/:id', getSingelTour);
+router.get('/:id', getSingleTour);
 
 router.put('/:id', updateTourByPut);
 

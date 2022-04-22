@@ -22,3 +22,8 @@
 
     - intro.txt
     - look how project is structured with babel and es6 modules
+    - tourRouter.js (1)
+    - tourController.js (2)
+    - tourRouter.js (3)
+    - app.js (4)
+    - env.txt

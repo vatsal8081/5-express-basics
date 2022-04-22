@@ -11,7 +11,7 @@ const tours = JSON.parse(fs.readFileSync(`${__dirname}/../data/tours.json`));
 // we create seprate controllers file for seprate entites in project
 
 // for more info check imports of tourRoutes.js
-const getaAllTours = (req, res) => {
+const getAllTours = (req, res) => {
   res.json({
     status: 'success',
     data: { tours },
@@ -39,7 +39,7 @@ const createTour = async (req, res) => {
   });
 };
 
-const getSingelTour = (req, res) => {
+const getSingleTour = (req, res) => {
   const id = Number(req.params.id);
 
   const tour = tours.find((el) => el.id === id);
@@ -83,8 +83,8 @@ const deleteTour = (req, res) => {
 };
 
 module.exports = {
-  getaAllTours,
-  getSingelTour,
+  getAllTours,
+  getSingleTour,
   createTour,
   updateTourByPut,
   updateTourByPatch,

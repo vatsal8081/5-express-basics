@@ -17,7 +17,7 @@ app.use(express.json());
 // 13
 // there are tons and tons of third party middlewers avalable as librarys in github and npm and we can use those third party middlewers in our express app to simplify the development
 // now one thing to just know is if you go to express site and under resourse tab you will see middlewere page in there there are many middlewers listed which are built in just like body parser middlewere and we can use them directly and there are also many third party middleweres listed which we can use.
-// before express 14.16 the body parser the CORS etc middlewers was not the pary of officeal express package so we was not able to use them just we did hear in body parser by using it from express package for that we have to install that seprate middlewere form npm and then we was able to use them but after express 14.16 those important middlewers was added in to express library so we can directly use them no need to install them sepratly from npm
+// before express 14.16 the body parser the CORS etc middlewers was not the part of officeal express package so we was not able to use them just we did hear in body parser by using it from express package for that we have to install that seprate middlewere form npm and then we was able to use them but after express 14.16 those important middlewers was added in to express library so we can directly use them no need to install them sepratly from npm
 
 // let use one third part middlewere which is not a part of express middlewere cald morgan which well help to log request in console to show how we use third party middleweres
 // morgan is not dev dependency so we have to install it in depandency section and then we can register it as we did register other middlewere in app so first we will do yarn add morgan then require morgan and then app.use morgan with passing format in which we want the log and then you will see logs in console on every requests.
@@ -33,7 +33,7 @@ app.use((req, res, next) => {
   next();
 });
 
-// this is the simplest gelbal level middlewere which will be execute in eact and every request hear in callback we will get req, res, and next function and everytime its miportant to call next at the end so request can go further if we don't do next then the request will stay stucked in this middlewere and we will not get response.
+// this is the simplest gelbal level middlewere which will be execute in each and every request hear in callback we will get req, res, and next function and everytime its miportant to call next at the end so request can go further if we don't do next then the request will stay stucked in this middlewere and we will not get response.
 
 app.use((req, res, next) => {
   req.requestTime = new Date().toISOString();
@@ -151,7 +151,7 @@ app.get('/api/v1/tours/:id', (req, res) => {
 // like this /api/v1/tours/:id/:tmp?
 
 // 9
-// now lets create endpoints fro update resourse and as you know we have 2 request types for that put and patch in put we have to send whole object in body which we want to update whather any fields are updated or stay same. and in patch we only have to send the fields which are updated not whole object. so you can use both of them base on convinence.
+// now lets create endpoints for update resourse and as you know we have 2 request types for that put and patch in put we have to send whole object in body which we want to update whather any fields are updated or stay same. and in patch we only have to send the fields which are updated not whole object. so you can use both of them base on convinence.
 
 app.put('/api/v1/tours/:id', (req, res) => {
   console.log('tour put body =', req.body);
