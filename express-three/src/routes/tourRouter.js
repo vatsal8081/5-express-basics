@@ -7,8 +7,9 @@ import {
   updateTourByPut,
   updateTourByPatch,
   deleteTour,
+  checkId,
+  validateCreateTourRequest,
 } from 'controllers/tourController';
-import { checkId } from '../controllers/tourController';
 
 const router = express.Router();
 
@@ -35,11 +36,30 @@ router.param('id', (req, res, next, val) => {
   next();
 });
 
+// 3
+// we can also chain as many middleware as we want by chaining the middleware we can execute them one by one for checking
+// different conditions and our req will travel from all that middleware stacks chain in sequence and if there is something
+// we can break the chain by returning response from any middleware
+
+// in express we try to create isolated functions so each and every function just do one task most of the time
+// like updateTour will only update tour it will not check if id is valid or data we need is validated it just update
+// tours as name suggest. we should create separate functions for check id and validation
+
+// so we can create those kind of middleware in our app and can chain them for one request so we will also be able to
+// use those middleware in other routes as well
+// for example we want to check token, validate request then create tour so we can create 3 middleware for this and this
+// token and validation middleware can be re usable in other routes
+
+// to chain multiple middleware in sequence we can just provide them as params in route function and they will execute
+// base on they are passed in params
+
+// lets create simple validation middleware which we will use before creating the tour
+
 router.param('id', checkId);
 
 router.get('/', getAllTours);
 
-router.post('/', createTour);
+router.post('/', validateCreateTourRequest, createTour);
 
 router.get('/:id', getSingleTour);
 

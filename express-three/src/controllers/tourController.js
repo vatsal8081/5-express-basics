@@ -47,6 +47,16 @@ const checkId = (req, res, next, val) => {
   next();
 };
 
+const validateCreateTourRequest = (req, res, next) => {
+  if (!req.body.name || !req.body.price) {
+    return res.status(400).json({
+      status: 'fail',
+      message: 'Missing Name or Price',
+    });
+  }
+  next();
+};
+
 const getAllTours = (req, res) => {
   res.json({
     status: 'success',
@@ -65,7 +75,7 @@ const createTour = async (req, res) => {
   tours.push(newTour);
 
   await fsAsync.writeFile(
-    `${__dirname}/data/tours.json`,
+    `${__dirname}/../data/tours.json`,
     JSON.stringify(tours)
   );
 
@@ -115,4 +125,5 @@ export {
   updateTourByPatch,
   deleteTour,
   checkId,
+  validateCreateTourRequest,
 };
