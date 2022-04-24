@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 import path from 'path';
 
-// hear we use path.resolve to get actual path of rnv file from the our current place
+// hear we use path.resolve to get actual path of env file from the our current place
 // the path.resolve is from path module from node core and this is the ideal way to configure the dotenv
 dotenv.config({ path: path.resolve(__dirname, '../.env') });
 

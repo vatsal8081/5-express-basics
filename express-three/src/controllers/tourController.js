@@ -11,7 +11,7 @@ const tours = JSON.parse(fs.readFileSync(`${__dirname}/../data/tours.json`));
 // before creating that params check middleware lets understand difference between res.json(), next() and return
 
 // - res.json() = as you know this many other response methods as used to send response to clients but the key thing to
-// note hear is when we do this the response is sent to client that mins we can't process the request further and we can'r
+// note hear is when we do this the response is sent to client that mins we can't process the request further and we can't
 // modify or work on the request but if we will have something else in code in controller after that then it will still run
 // so that mins the response will be sent but it not stop code execution further so if we have other code it will still run
 // but if we try to manipulation the request after res.json then we will get err so code execution is allowed but
@@ -19,7 +19,7 @@ const tours = JSON.parse(fs.readFileSync(`${__dirname}/../data/tours.json`));
 
 // - return = hear return will work just like it did in simple function that mins any of code after that will not run
 // so if we have even clg after return in controller it will not work
-// so if we do return return res.json() then it will send response ad then stop any execution after that
+// so if we do return return res.json() then it will send response and then stop any execution after that
 
 // - next() = next is as you know it's useful for just passing request further from middleware so it can continue
 // in middleware stack that mins any code in middleware will not execute after next()
